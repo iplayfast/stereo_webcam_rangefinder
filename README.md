@@ -1,4 +1,4 @@
-# Webcam Stereo Vision with Object Detection
+# Webcam Stereo Vision with Object Detection to detect distance to objects
 
 A real-time stereo vision system that uses two webcams to detect objects and measure their distances using YOLO-based triangulation.
 
