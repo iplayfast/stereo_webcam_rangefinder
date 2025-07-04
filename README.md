@@ -1,7 +1,7 @@
 # Webcam Stereo Vision with Object Detection
 
 A real-time stereo vision system that uses two webcams to detect objects and measure their distances using YOLO-based triangulation.
-
+a lot of test files, but webcam_stereo_vision.py seems to work the best so far
 ## Features
 
 - 🎯 **YOLO Object Detection** - Uses YOLOv8 to detect objects in both cameras
