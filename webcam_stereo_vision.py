@@ -13,6 +13,15 @@ USAGE:
     python webcam_stereo_vision.py                    # Use GUI (default)
     python webcam_stereo_vision.py --terminal         # Use terminal mode
     python webcam_stereo_vision.py --yolo-model yolov8s.pt  # Use different model
+
+
+*** notes ***
+This youtube video shows how to optimize yolo
+https://www.youtube.com/watch?v=yiSOQJ5JKqY&ab_channel=Pysource
+https://github.com/ultralytics/ultralytics  to optimize yolo model to engine (single line of code?)
+for gpu optimization us tensorrt, for cpu optimization look at onnx
+
+
 """
 
 import cv2
@@ -471,9 +480,15 @@ class StereoVisionSystem:
             ('yolov8m.pt', 'Medium - More accurate (~52MB)'),
             ('yolov8l.pt', 'Large - Very accurate (~87MB)'),
             ('yolov8x.pt', 'Extra Large - Most accurate (~136MB)'),
+            {'yolo11n.pt', '39.5 mAP 56.1 speed cpu onnx 1.5 speed T4 2.6 params 6.5 flops'},
+            {'yolo11s.pt', '47.0 mAP 90.1 speed cpu onnx 2.5 speed T4 9.4 params 21.5 flops'},
+            {'yolo11m.pt', '51.5 mAP 183.2 speed cpu onnx 4.7 speed T4 20.1 params 68.0 flops'},
+            {'yolo11l.pt', '53.4 mAP 238.6 speed cpu onnx 6.2 speed T4 25.6 params  86.9flops'},
+            {'yolo11x.pt', '54.7 mAP 462.8 speed cpu onnx 11.3 speed T4 56.9 params 194.9 flops'},
+
         ]
         
-        current_model = self.config.get('yolo_model', 'yolov8n.pt')
+        current_model = self.config.get('yolo_model', 'yolov11x.pt')
         print(f"Current model: {current_model}")
         print("-" * 80)
         print("Available models:")
