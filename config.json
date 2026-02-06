@@ -1,0 +1,46 @@
+{
+  "camera_settings": {
+    "resolution_width": 640,
+    "resolution_height": 480,
+    "fps": 30,
+    "left_camera_index": 0,
+    "right_camera_index": 2
+  },
+  
+  "detection_settings": {
+    "confidence_threshold": 0.3,
+    "yolo_model": "yolov8n.pt",
+    "process_every_n_frames": 5
+  },
+  
+  "stereo_settings": {
+    "buffer_time_window": 0.5,
+    "max_buffer_size": 10,
+    "matching_criteria": {
+      "max_y_diff": 100,
+      "min_size_ratio": 0.3,
+      "min_disparity": 1,
+      "max_disparity": 300,
+      "min_match_score": 0.3
+    }
+  },
+  
+  "calibration_settings": {
+    "calibration_file": "stereo_calibration_interactive.txt",
+    "min_calibration_object_size": 5000,
+    "min_calibration_confidence": 0.7
+  },
+  
+  "output_settings": {
+    "save_detection_frames": true,
+    "save_disparity_maps": true,
+    "save_raw_frames": true,
+    "output_directory": "./output"
+  },
+  
+  "display_settings": {
+    "show_temporal_info": true,
+    "temporal_info_threshold_ms": 50,
+    "status_update_interval": 30
+  }
+}
